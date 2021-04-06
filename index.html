@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="./ico/favicon.png" sizes="48x48">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' >
+    <title>Question your Answer</title>
+    <style>
+        @font-face {
+            font-family: "CourierPrime";
+            src: url("font/CourierPrime-Italic.ttf");
+        }
+        @font-face {
+            font-family: "RobotoCondensed";
+            src: url("font/RobotoCondensed-Light.ttf");
+        }
+        #useFont1{
+            font-family: "CourierPrime";
+            font-size: 0pt;
+        }
+        #useFont2{
+            font-family: "RobotoCondensed";
+            font-size: 0pt;
+        }
+        body{
+            /* overflow-x:hidden;
+            overflow-y:auto; */
+            margin: 0;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            height:100%;
+            background: url(src/images/texturePaper.jpeg);
+            background-blend-mode: color-dodge;
+        }
+
+        div, form{
+            color: black;
+        }
+
+        form{
+            position: relative;
+            width: 98%;
+            font-family: RobotoCondensed;
+            left: 1%
+        }
+
+        div{
+            font-family: CourierPrime;
+        }
+
+        #canvasContainer{
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        #canvasLienzo{
+            width: 100%;
+        }
+        
+        #premiumButton{
+            position:fixed;
+            right: 3px;
+            top: 2px;
+            width: 16%;
+            height: 60px;
+            background-color: #ffcc00;
+            color: #1a1400;
+            font-size: 80%;
+            font-family: RobotoCondensed;
+        }
+        #premiumTry{
+            position:fixed;
+            right: 3px;
+            top: 2px;
+            width: 18%;
+            height: 50px;
+            background:linear-gradient(#e9bf14, #ffda47, #e9bf14);
+            color: #45390a;
+            font-size: calc(12px + 1.5vw);
+            text-align: center;
+            vertical-align: middle;
+            font-family: CourierPrime;
+            padding-top: 18px;
+            padding-bottom: 4px;
+        }
+
+        #by{
+            position:fixed;
+            right: 3px;
+            bottom: 2px;
+            color: white;
+            font-size: 30%;
+        }
+
+        #gimmeAnswer{
+            position:relative;
+            background-color: #d9ff66;
+            color: #394d00;
+            width: 102%;
+            left: -1%;
+            outline: none !important;
+
+            /* left: 0; */
+        }
+
+        #head{
+            width: 100%;
+            /* padding: 15px; */
+        }
+        #titleText{
+            position: relative;
+            top: 5px;
+            left: 5px;
+        }
+        .hide{
+            display: none;
+        }
+        input:focus {
+            outline: none !important;
+            background-color: yellow;
+        }
+        
+        input[type=text] {
+        width: 100px;
+        -webkit-transition: width .35s ease-in-out;
+        transition: width .35s ease-in-out;
+        }
+        input[type=text]:focus {
+        width: 180px;
+        }
+
+    </style>
+    <script src="js/vendor/pixi.min.js"></script>
+    <script src="js/beizerGradientRamp.js"></script>
+    <script src="js/Quotes.js"></script>
+    <script src="index.js"></script>
+    <script src="node_modules/@pixi/filter-rgb-split/dist/filter-rgb-split.js"></script>
+
+
+</head>
+<body>
+    <div id="head">
+        <div id="titleText">
+            <span class="changeText">"To question your answer<br>is to find your solution"</span>
+        </div>
+        <button type="button" id="premiumButton">Probar<br>premium</button><br>
+        <div id="premiumTry" class="hide"></div><br>
+    </div>
+    <br>
+    <form name="form1" action="#" onsubmit="return false"  id="formId">
+        <label for="yourProblem" class="changeText">Escribe tu problema:</label>
+        <input type="text" id="yourProblem" name="yourProblem"><br>
+        <button type="button" id="gimmeAnswer">Dame la respuesta</button>
+    </form>
+    <div id="canvasContainer">
+    <canvas id = "canvasLienzo"></canvas>
+    </div>
+    <div id="useFont1">text to load font1</div>
+    <div id="useFont2">text to load font2</div>
+    <a href="http://abrahamrabago.com/" target="_blank">
+        <div id="by">by Abraham Rabago</div>
+    </a>
+</body>
+</html>
