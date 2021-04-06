@@ -21,4 +21,4 @@ Uses this sprite to make the wave effect work.
 Dependences:
 https://www.npmjs.com/package/@pixi/filter-rgb-split
 
-questionyouranswer.com
+http://questionyouranswer.com/
